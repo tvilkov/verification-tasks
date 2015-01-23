@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "OpenBank task";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+            </hgroup>
+            <p>
+                The application displays a graph of randomly generated data values.<br/> 
+                Rendering is done in real time by means of <a href="http://www.asp.net/signalr" >Signal-R</a> library.
+            </p>
+        </div>
+    </section>
+}
+<div id="graph" class="graph-view"></div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        jQuery(function () {
+            //var d3 = [[0, 12], [7, 12], null, [7, 2.5], [12, 2.5]];
+
+            //$.plot("#graph", [d3]);
+            
+            window.app.run({
+                $view: $('#graph')
+            });            
+        });
+    </script>
+
+}
