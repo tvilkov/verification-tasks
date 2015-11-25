@@ -1,0 +1,4 @@
+F:\Temp\verification-tasks\src\MindBox\MindBox.Algorithms\bin\Debug\MindBox.dll
+F:\Temp\verification-tasks\src\MindBox\MindBox.Algorithms\bin\Debug\MindBox.pdb
+F:\Temp\verification-tasks\src\MindBox\MindBox.Algorithms\obj\Debug\MindBox.dll
+F:\Temp\verification-tasks\src\MindBox\MindBox.Algorithms\obj\Debug\MindBox.pdb
