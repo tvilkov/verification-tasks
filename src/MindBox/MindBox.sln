@@ -5,6 +5,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindBox", "MindBox.Algorith
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindBox.Tests", "MindBox.Tests\MindBox.Tests.csproj", "{54FA1172-6CA9-4790-B061-A9159D8E6E77}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E9DE99B4-1B83-42CD-B53E-4BD92B928C0E}"
+	ProjectSection(SolutionItems) = preProject
+		ASSIGNMENT.txt = ASSIGNMENT.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

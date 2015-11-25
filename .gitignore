@@ -107,6 +107,7 @@ packages/
 *.nupkg
 packages
 /tmp/*
+src/*/packages/**
 
 src/*/logs
 src/*/App_Data/ReadModel
