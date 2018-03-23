@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kontur.ImageTransformer", "Kontur.ImageTransformer\Kontur.ImageTransformer.csproj", "{9801585B-D1AA-4078-B9C4-7B7F8883E55E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kontur.ImageTransformer.Tests", "Kontur.ImageTransformer.Tests\Kontur.ImageTransformer.Tests.csproj", "{4E26331E-BD8D-49DA-8E04-5C389E667C31}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EB0613AF-C4C1-4980-986C-656C3E06F259}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\ammo.txt = ..\..\..\ammo.txt
+		Tools\load-test.bat = Tools\load-test.bat
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9801585B-D1AA-4078-B9C4-7B7F8883E55E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9801585B-D1AA-4078-B9C4-7B7F8883E55E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9801585B-D1AA-4078-B9C4-7B7F8883E55E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9801585B-D1AA-4078-B9C4-7B7F8883E55E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E26331E-BD8D-49DA-8E04-5C389E667C31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E26331E-BD8D-49DA-8E04-5C389E667C31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E26331E-BD8D-49DA-8E04-5C389E667C31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E26331E-BD8D-49DA-8E04-5C389E667C31}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B54A5E3E-1FD9-466E-90E3-156515C3D2B2}
+	EndGlobalSection
+EndGlobal
