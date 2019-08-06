@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("MindBox.Algorithms")]
@@ -13,3 +14,4 @@ using System.Runtime.InteropServices;
 [assembly: Guid("eefff495-369c-4a99-b540-cadc22bf8f4c")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: InternalsVisibleTo("MindBox.Tests")]

@@ -1,12 +1,11 @@
 ﻿using System;
+using System.Collections;
 using NUnit.Framework;
 
 namespace MindBox.Tests
 {
     public class AlgorithmsTests
     {
-        private const double CUSTOM_EPSILON = 1e-10;   // 0.000..1,  10 -digits after decimal point
-
         [TestFixture]
         public class CalculateTriangleAreaTests
         {
@@ -67,7 +66,7 @@ namespace MindBox.Tests
                 var area = Algorithms.CalculateTriangleArea(sideA, sideB, sideC);
                 var diff = Math.Abs(area - expectedArea);
                 //Debug.WriteLine("Actual: " + area + ", expected: " + expectedArea);
-                Assert.IsTrue(diff <= CUSTOM_EPSILON);
+                Assert.IsTrue(diff <= Algorithms.Epsilon);
             }
         }
 
@@ -136,7 +135,69 @@ namespace MindBox.Tests
                 var result = Algorithms.TryCalculateTriangleArea(sideA, sideB, sideC, out area);
                 Assert.IsTrue(result);
                 var diff = Math.Abs(area - expectedArea);
-                Assert.IsTrue(diff <= CUSTOM_EPSILON);
+                Assert.IsTrue(diff <= Algorithms.Epsilon);
+            }
+        }
+
+        [TestFixture]
+        public class IsTriangleExistsTests
+        {
+            [TestCase(1, 1, 1.414213562373095)]
+            [TestCase(10, 20, 25)]
+            [TestCase(100, 200, 250)]
+            [TestCase(99.99, 99.99, 99.99)]
+            [TestCase(0.99, 0.99, 0.99)]
+            public void PositiveTests(double sideA, double sideB, double sideC)
+            {
+                Assert.IsTrue(Algorithms.IsTriangleExists(sideA, sideB, sideC),
+                    $"{nameof(Algorithms.IsTriangleExists)}({sideA}, {sideB}, {sideC}): returned false while true was expected");
+            }
+
+            [TestCase(0, 0, 0)]
+            [TestCase(0, 0, -1)]
+            [TestCase(-1, -1, -1)]
+            [TestCase(1, 1, 3)]
+            [TestCase(1.5, 1.5, 3.1)]
+            public void NegativeTests(double sideA, double sideB, double sideC)
+            {
+                Assert.IsFalse(Algorithms.IsTriangleExists(sideA, sideB, sideC),
+                    $"{nameof(Algorithms.IsTriangleExists)}({sideA}, {sideB}, {sideC}): returned true while false was expected");
+            }
+        }
+
+        [TestFixture]
+        public class IsRightTriangleTests
+        {
+            [TestCaseSource(nameof(PositiveTestCases))]
+            public void PositiveTests(double sideA, double sideB, double sideC)
+            {
+                Assert.IsTrue(Algorithms.IsRightTriangle(sideA, sideB, sideC),
+                    $"{nameof(Algorithms.IsRightTriangle)}({sideA}, {sideB}, {sideC}): returned false while true was expected");
+            }
+
+            public static IEnumerable PositiveTestCases
+            {
+                get
+                {
+                    yield return new TestCaseData(1, 1, Math.Sqrt(1 + 1));
+                    yield return new TestCaseData(Math.Sqrt(1 + 1), 1, 1);
+                    yield return new TestCaseData(1, Math.Sqrt(1 + 1), 1);
+                    yield return new TestCaseData(1.5, 1.5, Math.Sqrt(1.5 * 1.5 + 1.5 * 1.5));
+                    yield return new TestCaseData(9.99, 9.99, Math.Sqrt(9.99 * 9.99 + 9.99 * 9.99));
+                    yield return new TestCaseData(123.456, 789.012, Math.Sqrt(123.456 * 123.456 + 789.012 * 789.012));
+                }
+            }
+
+            [TestCase(0, 0, 0, TestName = "Triangle not exist #1")]            
+            [TestCase(-1, -1, -1, TestName = "Triangle not exist #2")]
+            [TestCase(1, 2, 4, TestName = "Triangle not exist #3")]            
+            [TestCase(2, 2, 2)]
+            [TestCase(10, 20, 25)]
+            [TestCase(100.001, 50.123, 59.999)]
+            public void NegativeTests(double sideA, double sideB, double sideC)
+            {
+                Assert.IsFalse(Algorithms.IsRightTriangle(sideA, sideB, sideC),
+                    $"{nameof(Algorithms.IsRightTriangle)}({sideA}, {sideB}, {sideC}): returned true while false was expected");
             }
         }
     }
