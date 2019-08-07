@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace MindBox
 {
@@ -55,7 +56,7 @@ namespace MindBox
         /// </summary>        
         public override string ToString()
         {
-            return $"Triangle (a={A}, b={B}, c={C})";
+            return string.Format(CultureInfo.InvariantCulture, "Triangle (A={0} B={1} C={2}", A, B, C);
         }
     }
 }

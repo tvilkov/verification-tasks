@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace MindBox
 {
@@ -31,7 +32,7 @@ namespace MindBox
         /// </summary>        
         public override string ToString()
         {
-            return $"Circle (Radius={Radius})";
+            return string.Format(CultureInfo.InvariantCulture, "Circle (Radius={0})", Radius);
         }
     }
 }
